@@ -16,7 +16,8 @@ public class MainActivity2 extends AppCompatActivity {
         //Recuperamos la información pasada en el intent
         Bundle bundle = this.getIntent().getExtras();
         //Construimos el mensaje a mostrar
-        txtSaludo.setText("Hola!, Bienvenido \n " + bundle.getString("NOMBRE"));
+        String datos = "Nombre: " + bundle.getString("NOMBRE")+" \n Fecha Nac: "+ bundle.getString("FECHA") +" \n Genero: "+ bundle.getString("GENERO") + " \n Telefono: "+ bundle.getString("TELEFONO");
+        txtSaludo.setText("Su información personal es: \n " + datos);
 
     }
 }
