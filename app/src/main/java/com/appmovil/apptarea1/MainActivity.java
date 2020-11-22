@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +44,13 @@ public class MainActivity extends AppCompatActivity {
         b.putString("GENERO", genero);
         //Añadimos la información al intent      
         intent.putExtras(b);     
-        // Iniciamos la nueva actividad      
-        startActivity(intent);
+        // Iniciamos la nueva actividad
+        if(txtNombre.length()>0 && txtFecha.length()>0 && genero.length()>0 && txtTelefono.length()>0)
+        {
+          startActivity(intent);
+        }else{
+            Snackbar.make(view,"llene todos los campos",Snackbar.LENGTH_SHORT).show();
+        }
     }
 
     }
